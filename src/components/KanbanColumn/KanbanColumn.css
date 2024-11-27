@@ -1,0 +1,66 @@
+.kanban-column {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar,
+.priority-icon,
+.status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-avatar {
+  border: 1px solid #ccc;
+}
+
+
+
+.header-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+}
