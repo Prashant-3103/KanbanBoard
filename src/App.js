@@ -46,7 +46,7 @@ const App = () => {
         ordering={ordering}
         setOrdering={setOrdering}
       />
-      <KanbanBoard tickets={tickets} users={users} grouping={grouping} ordering={ordering} />
+      <KanbanBoard tickets={tickets} users={users} grouping={grouping} setGrouping={setGrouping} setOrdering={setOrdering}  ordering={ordering} />
     </div>
   );
 };

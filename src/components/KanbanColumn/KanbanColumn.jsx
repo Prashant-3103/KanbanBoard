@@ -7,6 +7,7 @@ import { sortTickets } from "../../utils/dataUtils";
 const KanbanColumn = ({ groupKey, tickets, grouping, ordering, users }) => {
   const priorityLabels = ["No priority", "Low", "Medium", "High", "Urgent"];
   const user = grouping === "user" ? users.find((u) => u.id === groupKey) : null;
+console.log("ordering",ordering);
 
 
    //SVG paths for status icons

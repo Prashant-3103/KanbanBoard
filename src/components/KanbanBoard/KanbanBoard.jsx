@@ -3,8 +3,10 @@ import "./KanbanBoard.css";
 import KanbanColumn from "../KanbanColumn/KanbanColumn";
 import { groupTickets } from "../../utils/dataUtils";
 
-const KanbanBoard = ({ tickets, users, grouping, ordering }) => {
+const KanbanBoard = ({ tickets, users, grouping,  ordering }) => {
   const groupedTickets = groupTickets(tickets, grouping);
+
+
 
   return (
     <main className="kanban-board">
@@ -14,6 +16,7 @@ const KanbanBoard = ({ tickets, users, grouping, ordering }) => {
           groupKey={groupKey}
           tickets={groupTickets}
           grouping={grouping}
+          ordering={ordering}
           users={users}
         />
       ))}

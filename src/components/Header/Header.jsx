@@ -4,6 +4,7 @@ import "./Header.css";
 const Header = ({ grouping, setGrouping, ordering, setOrdering }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
