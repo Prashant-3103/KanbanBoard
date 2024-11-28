@@ -53,9 +53,9 @@
 
   /* Wrap text properly */
   .card-title span {
-    white-space: normal; /* Allow wrapping */
-    word-break: break-word; /* Handle long words */
-    max-width: calc(100% - 24px); /* Adjust based on layout */
+    white-space: normal;
+    word-break: break-word;
+    max-width: calc(100% - 24px);
   }
   /* Card Footer */
   .card-footer {
@@ -88,7 +88,7 @@
     font-size: 18px;
     cursor: pointer;
     color: #aaa;
-    margin-left: auto; /* Push it to the far right */
+    margin-left: auto; 
   }
   .user-avatar-placeholder {
     width: 24px;

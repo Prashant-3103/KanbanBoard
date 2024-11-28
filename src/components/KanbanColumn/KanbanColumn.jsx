@@ -11,6 +11,24 @@ const KanbanColumn = ({ groupKey, tickets, grouping, ordering, users }) => {
   const user = grouping === "user" ? users.find((u) => u.id === groupKey) : null;
 console.log("ordering",ordering);
 
+const emptyImageSvg = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ccc"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M16 20c-1.33-2-4-3-4-3s-2.67 1-4 3"></path>
+    <circle cx="12" cy="12" r="10"></circle>
+  </svg>
+);
+
 
    //SVG paths for status icons
   const statusIcons = {
@@ -78,12 +96,18 @@ console.log("ordering",ordering);
       return (
         <div className="column-header">
           <div className="header-left">
-            {user && (
-              <img
-                className="user-avatar"
-                src={user.imageUrl}
-                alt={user.name}
-              />
+          {user ? (
+              user.imageUrl ? (
+                <img
+                  className="user-avatar"
+                  src={user.imageUrl}
+                  alt={user.name}
+                />
+              ) : (
+                <div className="user-avatar-fallback">{emptyImageSvg}</div>
+              )
+            ) : (
+              <div className="user-avatar-fallback">{emptyImageSvg}</div>
             )}
             <span className="header-name">{user?.name || "Unknown"}</span>
             <span className="card-count">{tickets.length}</span>

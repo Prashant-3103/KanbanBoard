@@ -2,11 +2,27 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ ticket, users, grouping }) => {
-  // Find the user associated with this ticket (fallback to null if not found)
+  // Find the user associated with this ticket
   const user = users?.find((u) => u.id === ticket.userId) || null;
-console.log(users);
+// console.log(users);
 
-
+const emptyImageSvg = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ccc"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M16 20c-1.33-2-4-3-4-3s-2.67 1-4 3"></path>
+    <circle cx="12" cy="12" r="10"></circle>
+  </svg>
+);
 
   // SVG paths for status icons
   const statusIcons = {
@@ -68,14 +84,18 @@ console.log(users);
       <div className="card-header">
         <span className="ticket-id">{ticket.id}</span>
         {user ? (
-          <img
-            className="user-avatar"
-            src={`https://api.adorable.io/avatars/40/${user.name}.png`}
-            alt={user.name}
-          />
-        ) : (
-          <div className="user-avatar-placeholder">?</div>
-        )}
+              user.imageUrl ? (
+                <img
+                  className="user-avatar"
+                  src={user.imageUrl}
+                  alt={user.name}
+                />
+              ) : (
+                <div className="user-avatar-fallback">{emptyImageSvg}</div>
+              )
+            ) : (
+              <div className="user-avatar-fallback">{emptyImageSvg}</div>
+            )}
       </div>
       <div className="card-body">
         <div className="card-title">
