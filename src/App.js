@@ -12,6 +12,7 @@ const App = () => {
   const [grouping, setGrouping] = useState("status"); // Default grouping
   const [ordering, setOrdering] = useState("priority"); // Default ordering
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,8 +46,10 @@ const App = () => {
         setGrouping={setGrouping}
         ordering={ordering}
         setOrdering={setOrdering}
+        
       />
       <KanbanBoard tickets={tickets} users={users} grouping={grouping} setGrouping={setGrouping} setOrdering={setOrdering}  ordering={ordering} />
+
     </div>
   );
 };

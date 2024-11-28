@@ -6,6 +6,8 @@ import { sortTickets } from "../../utils/dataUtils";
 
 const KanbanColumn = ({ groupKey, tickets, grouping, ordering, users }) => {
   const priorityLabels = ["No priority", "Low", "Medium", "High", "Urgent"];
+
+
   const user = grouping === "user" ? users.find((u) => u.id === groupKey) : null;
 console.log("ordering",ordering);
 
@@ -79,7 +81,7 @@ console.log("ordering",ordering);
             {user && (
               <img
                 className="user-avatar"
-                src={`https://api.adorable.io/avatars/40/${user.name}.png`}
+                src={user.imageUrl}
                 alt={user.name}
               />
             )}
@@ -138,7 +140,7 @@ console.log("ordering",ordering);
       {getHeaderContent()}
       <div className="kanban-cards">
         {sortedTickets.map((ticket) => (
-          <Card key={ticket.id} ticket={ticket} grouping={grouping} />
+          <Card key={ticket.id} ticket={ticket} grouping={grouping} users={users} />
         ))}
       </div>
     </div>

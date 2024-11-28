@@ -1,9 +1,11 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ ticket, users = [], grouping }) => {
+const Card = ({ ticket, users, grouping }) => {
   // Find the user associated with this ticket (fallback to null if not found)
   const user = users?.find((u) => u.id === ticket.userId) || null;
+console.log(users);
+
 
 
   // SVG paths for status icons
@@ -90,7 +92,7 @@ const Card = ({ ticket, users = [], grouping }) => {
             className="tag-icon"
             width="16"
             height="16"
-          
+
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle cx="8" cy="8" r="8" fill="#c4c4c4" />
