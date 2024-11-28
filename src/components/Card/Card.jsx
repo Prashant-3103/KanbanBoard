@@ -90,6 +90,7 @@ const Card = ({ ticket, users = [], grouping }) => {
             className="tag-icon"
             width="16"
             height="16"
+          
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle cx="8" cy="8" r="8" fill="#c4c4c4" />
